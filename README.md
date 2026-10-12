@@ -47,7 +47,7 @@ Proyek ini menggunakan siklus pengembangan Machine Learning yang terstruktur seb
 
 ---
 
-## eknologi & Library
+## Teknologi & Library
 
 Proyek ini dibangun menggunakan:
 
