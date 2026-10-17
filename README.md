@@ -30,20 +30,37 @@ Proyek ini bertujuan untuk:
 
 Proyek ini menggunakan siklus pengembangan Machine Learning yang terstruktur sebagai berikut:
 
-1. **Data Loading**: Memuat dataset telekomunikasi (`WA_Fn-UseC_-Telco-Customer-Churn.csv`) ke dalam Dataframe Pandas dan memeriksa ringkasan tipe data serta dimensi awal data.
+1. **Data Loading**: Memuat dataset telekomunikasi (`WA_Fn-UseC_-Telco-Customer-Churn.csv`) ke dalam DataFrame Pandas dan memeriksa ringkasan tipe data serta dimensi awal data.
+
 2. **Data Cleaning & Transformation**:
-   - Menangani nilai kosong (_missing values_) pada kolom `TotalCharges` dan mengubah tipe datanya ke numerik.
-   - Menghapus atribut yang tidak relevan untuk pemodelan (seperti `customerID`).
-   - Melakukan _Encoding_ variabel kategorikal (One-Hot Encoding / Label Encoding) serta konversi kolom target `Churn` menjadi variabel biner (0 dan 1).
+   - Menangani nilai kosong (*missing values*) pada kolom `TotalCharges` dan mengubah tipe datanya menjadi numerik.
+   - Menghapus atribut yang tidak relevan untuk pemodelan, seperti `customerID`.
+   - Melakukan *encoding* variabel kategorikal menggunakan One-Hot Encoding atau Label Encoding serta mengonversi kolom target `Churn` menjadi variabel biner (0 dan 1).
+
 3. **Exploratory Data Analysis (EDA)**:
    - Menganalisis distribusi target `Churn`.
-   - Visualisasi hubungan antara fitur pelanggan (seperti masa berlangganan/_tenure_, _MonthlyCharges_, tipe kontrak) dengan status _churn_.
+   - Memvisualisasikan hubungan antara fitur pelanggan, seperti masa berlangganan (*tenure*), `MonthlyCharges`, dan tipe kontrak, dengan status *churn*.
+
 4. **Data Splitting & Feature Scaling**:
-   - Membagi data menjadi data latih (_training set_) dan data uji (_testing set_) dengan rasio 80:20.
-   - Melakukan _scaling_ variabel numerik menggunakan `StandardScaler`.
+   - Membagi data menjadi data latih (*training set*) dan data uji (*testing set*) dengan rasio 80:20.
+   - Melakukan *scaling* pada variabel numerik menggunakan `StandardScaler` sesuai kebutuhan model.
+
 5. **Modelling & Evaluation**:
-   - Melatih model machine learning seperti **Logistic Regression** dan **Random Forest Classifier**.
-   - Mengukur performa model menggunakan _Accuracy Score_, _Confusion Matrix_, dan _Classification Report_ (Precision, Recall, F1-Score).
+   - Melatih model *Machine Learning*, seperti **Logistic Regression** dan **Random Forest Classifier**.
+   - Mengevaluasi performa model menggunakan *Accuracy Score*, *Confusion Matrix*, dan *Classification Report* yang mencakup Precision, Recall, serta F1-Score.
+   - Memilih model terbaik berdasarkan hasil evaluasi dan menyimpannya untuk digunakan pada tahap berikutnya.
+
+6. **Deployment**:
+   - Mengintegrasikan model terbaik ke dalam aplikasi sederhana menggunakan framework seperti **Flask** atau **Streamlit**.
+   - Membuat antarmuka yang memungkinkan pengguna memasukkan data pelanggan untuk memperoleh prediksi kemungkinan *churn*.
+   - Menyimpan model beserta proses preprocessing yang diperlukan agar data baru diproses secara konsisten dengan data pelatihan.
+   - Melakukan pengujian aplikasi untuk memastikan model dapat memberikan hasil prediksi dengan benar.
+
+7. **Monitoring & Maintenance**:
+   - Memantau performa model setelah diterapkan, termasuk jumlah prediksi dan distribusi hasil prediksi.
+   - Mengevaluasi prediksi model secara berkala menggunakan data aktual apabila tersedia.
+   - Mengamati perubahan karakteristik data pelanggan (*data drift*) yang dapat memengaruhi akurasi prediksi.
+   - Melakukan pelatihan ulang (*retraining*) dan memperbarui model apabila performanya menurun atau pola perilaku pelanggan berubah.
 
 ---
 
